@@ -38,7 +38,7 @@ The output of SST consists of the following variables:
 
 <img src="../images/result2.png" width=750>
 
-*See [Anomaly detection in floodlights for Smart Campus](README.md) for more details.*
+*See [Anomaly detection in floodlights for Smart Campus](../README.md) for more details.*
 
 ***Figure 2: Plot of PC Absolute Angle over sliding windows*** 
 
@@ -50,7 +50,7 @@ The output of SST consists of the following variables:
 
 <img src="../images/result1.png" width=750>
 
-*See [Anomaly detection in floodlights for Smart Campus](README.md) for more details.*
+*See [Anomaly detection in floodlights for Smart Campus](../README.md) for more details.*
 
 ---
 **Note**: Subspace Tracking ESP plugin and corresponding batch processing mapping
