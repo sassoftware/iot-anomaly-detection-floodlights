@@ -155,7 +155,7 @@ The host is the system where SAS Event Stream Processing Studio is installed.
    * Repeat the steps to add charts for Light_2-Light_6 or other parameters from SST model
     ![](images/pic10.png)
 
-Check [sample project template](https://gitlab.sas.com/IOT/accelerators/anomaly-detection-in-floodlights-for-smart-campus/blob/master/project/Parking_lights.xml) to compare project properties.
+Check [sample project template](project/parking_lights.xml) to compare project properties.
 
 For more details see the [link.](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.1&docsetId=espvisualize&docsetTarget=titlepage.htm&locale=en)
 
