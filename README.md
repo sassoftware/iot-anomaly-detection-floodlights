@@ -8,12 +8,12 @@ Learn how to build a model for real-time detection of malfunctioning light group
 
 Key take-aways from the use case: 
 * Learn how to design streaming model for real-time failure detection
-* Learn how to use [Subspace tracking](docs/Subspace Tracking.md) algorithm to detect anomalies
-* Best practices for [Subspace tracking](docs/Subspace Tracking.md) algorithm
+* Learn how to use [Subspace tracking](../docs/Subspace Tracking.md) algorithm to detect anomalies
+* Best practices for [Subspace tracking](../docs/Subspace Tracking.md) algorithm
 
 The data set consists of energy consumption values captured every five minutes from six floodlight circuits, over a span of about three months. 
 
-We will use the [Subspace tracking](docs/Subspace Tracking.md) algorithm packaged in **SAS Event Stream Processing Studio** to detect outliers in real time using streaming data. It is a method to detect anomalies and system degradation in systems that generate high-frequency, high-dimensional data. It can be used for data containing a single measure for sensors from various devices operating under similar conditions (e.g., energy output from multiple panels in a Solar farm), or multiple measures for sensors from a single device operating under similar conditions (e.g., turbofan in an aircraft).
+We will use the [Subspace tracking](../docs/Subspace Tracking.md) algorithm packaged in **SAS Event Stream Processing Studio** to detect outliers in real time using streaming data. It is a method to detect anomalies and system degradation in systems that generate high-frequency, high-dimensional data. It can be used for data containing a single measure for sensors from various devices operating under similar conditions (e.g., energy output from multiple panels in a Solar farm), or multiple measures for sensors from a single device operating under similar conditions (e.g., turbofan in an aircraft).
 
 [![Anomaly Detection in Floodlights for Smart Campus](/images/anomalyDetectionFloodlights.png)](https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6130154143001 "Anomaly Detection in Floodlights for Smart Campus")
 
@@ -46,10 +46,10 @@ Additionally, **Light 5** dips in energy consumption, especially on the second-l
 
 <img src="images/data2.png" >
 
-See [Explore Data](docs/Explore Data.md) using **SAS Visual Analytics** for step by step description.
+See [Explore Data](../docs/Explore Data.md) using **SAS Visual Analytics** for step by step description.
 
 ### Build and Test Streaming Model
-To detect malfunctioning floodlights in real-time, we use the [Subspace tracking (SST)](docs/Subspace Tracking.md) algorithm which is packaged with **SAS Event Stream Processing Studio (ESP Studio)** on streaming data.
+To detect malfunctioning floodlights in real-time, we use the [Subspace tracking (SST)](../docs/Subspace Tracking.md) algorithm which is packaged with **SAS Event Stream Processing Studio (ESP Studio)** on streaming data.
 It is frequently used in the IoT world where data is gathered from many sensors that are connected to each other and have high correlation. 
 This approach converts a set of correlated variables to a set of linearly uncorrelated variables known as principal components. Because the first few principal components usually capture most of the variability in the data, they can be tracked over time to assess whether any changes have taken place in the subspace that is spanned by the data.
 We can use SST to detect malfunctioning circuits in the floodlights by tracking angle changes between principal components or by using principal component distances away from the mean.
@@ -64,7 +64,7 @@ The following properties were used for window-based method:
 
 A window length of 240 and overlap of -1 indicates that the procedure starts with the first 240 observations in the data table, calculates the principal components, moves ahead one observation and uses observations 2–241 to calculate the principal components, and continues in this manner until the entire data table has been used.
 
-See instructions to [build and test model](docs/Build Model.md) using SST in **SAS Event Stream Processing Studio**.
+See instructions to [build and test model](../docs/Build Model.md) using SST in **SAS Event Stream Processing Studio**.
 
 ### Result Interpretation
 
@@ -87,7 +87,7 @@ The chart below displays the angle change of the first principal component betwe
 With this knowledge, decisions can be put into place to trigger maintenance activities when the angle change value is above an acceptable level. 
 
 ### Summary
-We can build in-stream models using the [Subspace tracking (SST)](docs/Subspace Tracking.md) algorithm packaged in **SAS Event Stream Processing Analytics**. 
+We can build in-stream models using the [Subspace tracking (SST)](../docs/Subspace Tracking.md) algorithm packaged in **SAS Event Stream Processing Analytics**. 
 It can monitor the system in real-time and the faulty light can be immediately identified, and admins alerted.
 This method can be used in other systems that generate high-frequency, high-dimensional data to detect anomalies and degradation in real-time. 
 
@@ -98,9 +98,9 @@ See detailed [step by step instructions](docs) to build the process and learn mo
 
 | # | Description |
 | :------: | :------ |
-| 1 | [Explore Data](docs/Explore Data.md) |
-| 2 | [Build and Test Streaming Models](docs/Build Model.md) | 
-| 3 | [Best Practices for SST](docs/Subspace Tracking.md) | 
+| 1 | [Explore Data](../docs/Explore Data.md) |
+| 2 | [Build and Test Streaming Models](../docs/Build Model.md) | 
+| 3 | [Best Practices for SST](../docs/Subspace Tracking.md) | 
 
 ## Contributing
 
