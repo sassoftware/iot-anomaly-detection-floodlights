@@ -8,8 +8,8 @@ Learn how to build a model for real-time detection of malfunctioning light group
 
 Key take-aways from the use case: 
 * Learn how to design streaming model for real-time failure detection
-* Learn how to use [Subspace tracking](../docs/SubspaceTracking.md) algorithm to detect anomalies
-* Best practices for [Subspace tracking](../docs/SubspaceTracking.md) algorithm
+* Learn how to use [Subspace tracking](docs/SubspaceTracking.md) algorithm to detect anomalies
+* Best practices for [Subspace tracking](docs/SubspaceTracking.md) algorithm
 
 The data set consists of energy consumption values captured every five minutes from six floodlight circuits, over a span of about three months. 
 
