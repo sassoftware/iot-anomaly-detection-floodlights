@@ -29,7 +29,9 @@ The host is the system where SAS Event Stream Processing Studio is installed.
         *  Similarly update path of Subscriber connector to reflect accessible location
     * Save the Project
     * Follow **Sections 4-5** as described below. 
-    * See **Demo video** for more details. [![Anomaly Detection in Floodlights for Smart Campus](/images/anomalyDetectionFloodlights.png)](https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6130154143001 "Anomaly Detection in Floodlights for Smart Campus") 
+    * See **Demo video** for more details. 
+    
+    [![Anomaly Detection in Floodlights for Smart Campus](/images/anomalyDetectionFloodlights.png)](https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6130154143001 "Anomaly Detection in Floodlights for Smart Campus") 
 
 
 ## 2.b (Option 2) Create Project
@@ -61,7 +63,7 @@ The host is the system where SAS Event Stream Processing Studio is installed.
    *  Click on Output schema on the right pane and edit rows   
    *  Click on Import Schema and select XML snippet.
    
-      <img src="images/pic_b.png" width="400" > 
+      <img src="../images/pic_b.png" width="400" > 
 
    *  Copy the xml below and paste it in the window. 
       ``` 
@@ -94,7 +96,7 @@ The host is the system where SAS Event Stream Processing Studio is installed.
         *  Type an output name for each role under Output Map. These columns will be added to the schema. Click on Add new Item when prompted. 
         ![](../images/pic6.png) 
         *  For principalVecOut type : pc_light_1, pc_light_2, pc_light_3, pc_light_4, pc_light_5, pc_light_6 for Name. Click on Add new Item when prompted. 
-         <img src="images/pic7.png" width=600>
+         <img src="../images/pic7.png" width=600>
    *  Go to **Output Schema**, click on 'Edit rows'
         *  Click on Import Schema and copy fields from Input Schema
         *  Add new fields pc_light_1-pc_light_6 with type as 'double' 
@@ -139,7 +141,7 @@ The host is the system where SAS Event Stream Processing Studio is installed.
    *  Click on **Enter Test Mode**
    *  Click on **Run Test**
    *  The image below shows the streaming data coming in and results from SST. 
-     ![](images/pic9.png)
+     ![](../images/pic9.png)
 
 ## 5. Visualize Event Streams with Streamviwer
    * Access **SAS Event Stream Processing Streamviewer** by opening following URL: https://*Streamviewer-host-name*/SASEventStreamProcessingStreamviewer
@@ -149,13 +151,13 @@ The host is the system where SAS Event Stream Processing Studio is installed.
    * Highlight the SST-calculate window, it displays information regarding the window, fields, schema, etc. 
    * Add updating subscriber or streaming subscriber. 
    * A table is added to the dashboard. 
-   * Click on ![](images/a6.png)  and select New Chart
+   * Click on ![](../images/a6.png)  and select New Chart
    * Select Scatter plot and set values for X as Event and Y as Light_1, click OK
    * A chart is added to the dashboard
    * Repeat the steps to add charts for Light_2-Light_6 or other parameters from SST model
-    ![](images/pic10.png)
+    ![](../images/pic10.png)
 
-Check [sample project template](project/parking_lights.xml) to compare project properties.
+Check [sample project template](../project/parking_lights.xml) to compare project properties.
 
 For more details see the [link.](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.1&docsetId=espvisualize&docsetTarget=titlepage.htm&locale=en)
 
