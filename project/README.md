@@ -1,0 +1,1 @@
+This folder contains reference XML code (parking_lights.xml) from the model. 

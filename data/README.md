@@ -1,0 +1,1 @@
+This folder contains the data set (parking_floodlights_data.csv) which consists of energy consumption values that were captured every five minutes from six floodlight circuits. 
