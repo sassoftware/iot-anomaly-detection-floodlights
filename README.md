@@ -1,4 +1,4 @@
-﻿# Anomaly Detection in Floodlights for Smart Campus
+# Anomaly Detection in Floodlights for Smart Campus
 
 <img src="https://img.shields.io/badge/Category-Condition--Based%20Maintenance-blue"> <img src="https://img.shields.io/badge/Sub--Category-Anomaly%20Detection-yellowgreen"> <img src="https://img.shields.io/badge/Difficulty-Intermediate-yellow"> <img src="https://img.shields.io/badge/Analytical%20Method-Subspace%20Tracking (SST)-brightgreen"> <img src="https://img.shields.io/badge/Updated-Dec%202019-orange">
 
@@ -11,7 +11,7 @@ Key take-aways from the use case:
 * Learn how to use [Subspace tracking](docs/SubspaceTracking.md) algorithm to detect anomalies
 * Best practices for [Subspace tracking](docs/SubspaceTracking.md) algorithm
 
-The data set consists of energy consumption values captured every five minutes from six floodlight circuits, over a span of about three months. 
+The data set consists of energy consumption values captured every five minutes, from six floodlight circuits, over a span of about three months. 
 
 We will use the [Subspace tracking](docs/SubspaceTracking.md) algorithm packaged in **SAS Event Stream Processing Studio** to detect outliers in real time using streaming data. It is a method to detect anomalies and system degradation in systems that generate high-frequency, high-dimensional data. It can be used for data containing a single measure for sensors from various devices operating under similar conditions (e.g., energy output from multiple panels in a Solar farm), or multiple measures for sensors from a single device operating under similar conditions (e.g., turbofan in an aircraft).
 
