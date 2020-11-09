@@ -29,7 +29,8 @@ The host is the system where SAS Event Stream Processing Studio is installed.
         *  Similarly update path of Subscriber connector to reflect accessible location
     * Save the Project
     * Follow **Sections 4-5** as described below. 
-    * See **Demo video** for more details. ![](/docs/sst_floodlights.mp4) 
+    * See **Demo video** for more details. 
+    [![Anomaly Detection in Floodlights for Smart Campus](/images/anomalyDetectionFloodlights.png)](https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6130154143001 "Anomaly Detection in Floodlights for Smart Campus")
 
 
 ## 2.b (Option 2) Create Project
