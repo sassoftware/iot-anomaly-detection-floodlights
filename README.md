@@ -15,7 +15,7 @@ The data set consists of energy consumption values captured every five minutes f
 
 We will use the [Subspace tracking (SST)](/docs/SubspaceTracking.md) algorithm packaged in **SAS Event Stream Processing Studio** to detect outliers in real time using streaming data. It is a method to detect anomalies and system degradation in systems that generate high-frequency, high-dimensional data. It can be used for data containing a single measure for sensors from various devices operating under similar conditions (e.g., energy output from multiple panels in a Solar farm), or multiple measures for sensors from a single device operating under similar conditions (e.g., turbofan in an aircraft).
 
-![](/docs/sst_floodlights.mp4)
+[![Anomaly Detection in Floodlights for Smart Campus](/images/anomalyDetectionFloodlights.png)](https://players.brightcove.net/3665946608001/default_default/index.html?videoId=6130154143001 "Anomaly Detection in Floodlights for Smart Campus")
 
 ### Prerequisites
 
