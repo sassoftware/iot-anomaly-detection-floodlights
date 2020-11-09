@@ -1,0 +1,153 @@
+<project name="anomaly_detection" pubsub="auto" threads="1" heartbeat-interval="1">
+  <description><![CDATA[Anomaly detection is used to identify data points that are considered abnormal to the pattern of the rest of the data. This project demonstrates how to use SAS Event Stream Processing to monitor the energy consumption of parking floodlights on SAS campus.
+
+Needs to be running on test mode for the ESP Streamviewer dashboard "Utilities - Smart Cities" to be viewed.]]></description>
+  <metadata>
+    <meta id="layout">{"cq1":{"addFlags":{"x":-90,"y":85},"filterAlerts":{"x":-90,"y":215},"floodlights_data":{"x":-90,"y":-165},"sst_model":{"x":-90,"y":-40}}}</meta>
+    <meta id="studioModifiedBy">anonymousUser</meta>
+    <meta id="studioModified">1600735408380</meta>
+    <meta id="studioTags">streamviewer, demo, esppy, streaming_analytics</meta>
+    <meta id="studioUploadedBy">anonymousUser</meta>
+    <meta id="studioUploaded">1579187696514</meta>
+  </metadata>
+  <contqueries>
+    <contquery name="cq1">
+      <windows>
+        <window-source index="pi_EMPTY" insert-only="true" pubsub="true" name="floodlights_data">
+          <schema>
+            <fields>
+              <field name="day" type="string"/>
+              <field name="sequence_id" type="int64" key="true"/>
+              <field name="Light_1" type="double"/>
+              <field name="Light_2" type="double"/>
+              <field name="Light_3" type="double"/>
+              <field name="Light_4" type="double"/>
+              <field name="Light_5" type="double"/>
+              <field name="Light_6" type="double"/>
+            </fields>
+          </schema>
+          <connectors>
+            <connector class="fs" name="input_data">
+              <properties>
+                <property name="type"><![CDATA[pub]]></property>
+                <property name="addcsvflags"><![CDATA[normal]]></property>
+                <property name="addcsvopcode"><![CDATA[true]]></property>
+                <property name="blocksize"><![CDATA[1]]></property>
+                <property name="fsname"><![CDATA[/demo/Event_Stream_Processing/data/parking_floodlights_data.csv]]></property>
+                <property name="fstype"><![CDATA[csv]]></property>
+                <property name="header"><![CDATA[1]]></property>
+                <property name="rate"><![CDATA[10]]></property>
+                <property name="repeatcount"><![CDATA[200]]></property>
+              </properties>
+            </connector>
+          </connectors>
+        </window-source>
+        <window-calculate algorithm="SST" pubsub="true" index="pi_EMPTY" name="sst_model">
+          <schema>
+            <fields>
+              <field name="day" type="string"/>
+              <field name="sequence_id" type="int64" key="true"/>
+              <field name="Light_1" type="double"/>
+              <field name="Light_2" type="double"/>
+              <field name="Light_3" type="double"/>
+              <field name="Light_4" type="double"/>
+              <field name="Light_5" type="double"/>
+              <field name="Light_6" type="double"/>
+              <field name="PCAngleChangeOut" type="double"/>
+              <field name="PCAbsoluteAngleOut" type="double"/>
+              <field name="projAngleOut" type="double"/>
+              <field name="residualRate" type="double"/>
+              <field name="numRank" type="int32"/>
+              <field name="pc_light_1" type="double"/>
+              <field name="pc_light_2" type="double"/>
+              <field name="pc_light_3" type="double"/>
+              <field name="pc_light_4" type="double"/>
+              <field name="pc_light_5" type="double"/>
+              <field name="pc_light_6" type="double"/>
+            </fields>
+          </schema>
+          <parameters>
+            <properties>
+              <property name="windowLength"><![CDATA[240]]></property>
+              <property name="overlap"><![CDATA[-1]]></property>
+              <property name="maxPrincipal"><![CDATA[2]]></property>
+              <property name="covForgetFactor"><![CDATA[0.5]]></property>
+              <property name="meanForgetFactor"><![CDATA[0.5]]></property>
+              <property name="eigvalTolCumulative"><![CDATA[0.99]]></property>
+            </properties>
+          </parameters>
+          <input-map>
+            <properties>
+              <property name="inputs"><![CDATA[Light_1,Light_2,Light_3,Light_4,Light_5,Light_6]]></property>
+            </properties>
+          </input-map>
+          <output-map>
+            <properties>
+              <property name="PCAngleChangeOut"><![CDATA[PCAngleChangeOut]]></property>
+              <property name="PCAbsoluteAngleOut"><![CDATA[PCAbsoluteAngleOut]]></property>
+              <property name="projAngleOut"><![CDATA[projAngleOut]]></property>
+              <property name="residualOut"><![CDATA[residualRate]]></property>
+              <property name="numRankOut"><![CDATA[numRank]]></property>
+              <property name="principalVecOut"><![CDATA[pc_light_1,pc_light_2,pc_light_3,pc_light_4,pc_light_5,pc_light_6]]></property>
+            </properties>
+          </output-map>
+        </window-calculate>
+        <window-filter pubsub="true" index="pi_EMPTY" name="filterAlerts">
+          <expression><![CDATA[Flag==1]]></expression>
+        </window-filter>
+        <window-compute pubsub="true" index="pi_EMPTY" name="addFlags">
+          <schema>
+            <fields>
+              <field name="day" type="string"/>
+              <field name="sequence_id" type="int64" key="true"/>
+              <field name="Light_1" type="double"/>
+              <field name="Light_2" type="double"/>
+              <field name="Light_3" type="double"/>
+              <field name="Light_4" type="double"/>
+              <field name="Light_5" type="double"/>
+              <field name="Light_6" type="double"/>
+              <field name="PCAngleChangeOut" type="double"/>
+              <field name="PCAbsoluteAngleOut" type="double"/>
+              <field name="projAngleOut" type="double"/>
+              <field name="residualRate" type="double"/>
+              <field name="numRank" type="int32"/>
+              <field name="pc_light_1" type="double"/>
+              <field name="pc_light_2" type="double"/>
+              <field name="pc_light_3" type="double"/>
+              <field name="pc_light_4" type="double"/>
+              <field name="pc_light_5" type="double"/>
+              <field name="pc_light_6" type="double"/>
+              <field name="Flag" type="double"/>
+            </fields>
+          </schema>
+          <output>
+            <field-expr><![CDATA[day]]></field-expr>
+            <field-expr><![CDATA[Light_1]]></field-expr>
+            <field-expr><![CDATA[Light_2]]></field-expr>
+            <field-expr><![CDATA[Light_3]]></field-expr>
+            <field-expr><![CDATA[Light_4]]></field-expr>
+            <field-expr><![CDATA[Light_5]]></field-expr>
+            <field-expr><![CDATA[Light_6]]></field-expr>
+            <field-expr><![CDATA[PCAngleChangeOut]]></field-expr>
+            <field-expr><![CDATA[PCAbsoluteAngleOut]]></field-expr>
+            <field-expr><![CDATA[projAngleOut]]></field-expr>
+            <field-expr><![CDATA[residualRate]]></field-expr>
+            <field-expr><![CDATA[numRank]]></field-expr>
+            <field-expr><![CDATA[pc_light_1]]></field-expr>
+            <field-expr><![CDATA[pc_light_2]]></field-expr>
+            <field-expr><![CDATA[pc_light_3]]></field-expr>
+            <field-expr><![CDATA[pc_light_4]]></field-expr>
+            <field-expr><![CDATA[pc_light_5]]></field-expr>
+            <field-expr><![CDATA[pc_light_6]]></field-expr>
+            <field-expr><![CDATA[if (PCAngleChangeOut >0.0008) then return 1 else return 0]]></field-expr>
+          </output>
+        </window-compute>
+      </windows>
+      <edges>
+        <edge role="data" source="floodlights_data" target="sst_model"/>
+        <edge source="sst_model" target="addFlags"/>
+        <edge source="addFlags" target="filterAlerts"/>
+      </edges>
+    </contquery>
+  </contqueries>
+</project>
