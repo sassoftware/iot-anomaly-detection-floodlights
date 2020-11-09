@@ -174,7 +174,7 @@ The host is the system where SAS Event Stream Processing Studio is installed.
 
 Check [sample project template](/project/anomaly_detection_parking_floodlights.xml) to compare project properties.
 
-For more details see the [link.](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.1&docsetId=espvisualize&docsetTarget=titlepage.htm&locale=en)
+For more details see the [link.](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.2&docsetId=espvisualize&docsetTarget=titlepage.htm&locale=en)
 
 #### NOTE: See this [link](/project/Anomaly_Detection_Parking_Floodlights.ipynb) for Jupyter notebook example for SAS Event Stream Processing ESPpy module.
 
