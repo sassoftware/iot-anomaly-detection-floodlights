@@ -25,7 +25,7 @@ Two different analytical approaches can be used:
 
 ![pic2](../images/pic2.PNG)
 
-See [link](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.1&docsetId=espan&docsetTarget=p0dv9t241gp1ptn13vo75aol2d1b.htm&locale=en) for more details on parameters.
+See [link](https://go.documentation.sas.com/?cdcId=espcdc&cdcVersion=6.2&docsetId=espan&docsetTarget=n034ho5r1hbu2rn18m68ywshnuq5.htm&locale=en#p0dv9t241gp1ptn13vo75aol2d1b) for more details on parameters.
 
 ### Result Interpretation
 The output of SST consists of the following variables:
